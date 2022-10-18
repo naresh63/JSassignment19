@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assign 19 - promise</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // 1. ans
+      // Error 1
+      // Success 4
+
+      // 2.
+      function sleep(delay) {
+        return new Promise((resolve) => setTimeout(resolve(1), delay));
+      }
+
+      sleep(2000).then((result) => console.log(result));
+
+      // 3. ans
+      /*  2
+              4
+               undefined
+              8 */
+
+      // 4.
+      /* start
+              middle
+              1
+              end
+               success */
+
+      // 5.
+      function delayPromise(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      delayPromise(1000).then(() => console.log("runs after 1 second"));
+
+      // 6. ans SUCCESS!
+
+      // 7. ans Error: The Fails!
+
+      // 8. ans
+      /*start
+                end
+                resolve
+                setTimeout */
+
+      // 10. ans
+      /* start
+                end
+                1
+                2 */
+    </script>
+  </body>
+</html>
